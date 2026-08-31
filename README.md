@@ -340,10 +340,10 @@ See **Architecture** above and the repository tree for full detail.
 ## Screenshots
 
 ### Screenshot 1
-![Screenshot 1](screenshots/Screenshot%202026-08-31%20081316.png)
+![WEEK PASSWORD](screenshots/Screenshot%202026-08-31%20081316.png)
 
 ### Screenshot 2
-![Screenshot 2](screenshots/Screenshot%202026-08-31%20081357.png)
+![STRONG PASSWORD](screenshots/Screenshot%202026-08-31%20081357.png)
 
 See `screenshots/` for CLI runs against the WEAK / MEDIUM / STRONG
 demo passwords below, pattern detection, common-password detection,
