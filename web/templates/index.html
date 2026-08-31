@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Strength &amp; Security Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<main class="console">
+
+  <header class="console__header">
+    <p class="eyebrow">SECURITY ANALYSIS TERMINAL</p>
+    <h1>Password Strength &amp; Security Analyzer</h1>
+    <p class="subhead">Length, character diversity, pattern detection, common-password checks,
+      and theoretical entropy &mdash; combined into one transparent, explainable read.</p>
+  </header>
+
+  <section class="panel panel--input">
+    <label class="prompt-label" for="pw">
+      <span class="prompt-glyph">&gt;</span> ENTER PASSWORD TO ANALYZE
+    </label>
+    <div class="input-row">
+      <input type="password" id="pw" class="prompt-input" autocomplete="off" spellcheck="false"
+             placeholder="Type or paste a password&hellip;">
+      <button type="button" id="toggle-visibility" class="ghost-btn" aria-pressed="false">SHOW</button>
+    </div>
+    <div class="input-meta">
+      <span id="char-count">0 characters</span>
+      <span class="dot">&middot;</span>
+      <span>Analyzed locally by this server &mdash; never stored, logged, or written to disk.</span>
+    </div>
+  </section>
+
+  <section class="panel panel--readout" id="readout" aria-live="polite">
+    <div class="readout-empty" id="readout-empty">
+      <div class="meter meter--idle" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p>Awaiting input&hellip;</p>
+    </div>
+
+    <div class="readout-content" id="readout-content" hidden>
+      <div class="strength-row">
+        <div class="meter" id="meter" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="strength-label">
+          <span class="strength-tag" id="strength-tag">&mdash;</span>
+          <span class="score-value" id="score-value">0 / 10</span>
+        </div>
+      </div>
+
+      <div class="grid-checks" id="grid-checks"></div>
+
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-label">THEORETICAL ENTROPY</span>
+          <span class="stat-value" id="entropy-value">&mdash;</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">BRUTE-FORCE ESTIMATE</span>
+          <span class="stat-value" id="crack-value">&mdash;</span>
+        </div>
+      </div>
+
+      <div class="notes">
+        <div class="notes-block" id="issues-block" hidden>
+          <h2>Issues</h2>
+          <ul id="issues-list"></ul>
+        </div>
+        <div class="notes-block" id="recs-block" hidden>
+          <h2>Recommendations</h2>
+          <ul id="recs-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="privacy-strip">
+    <span class="privacy-dot" aria-hidden="true"></span>
+    Your password is analyzed locally and is not stored by this application.
+  </footer>
+
+</main>
+
+<script src="{{ url_for('static', filename='analyzer.js') }}"></script>
+</body>
+</html>
