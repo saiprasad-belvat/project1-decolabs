@@ -339,10 +339,10 @@ See **Architecture** above and the repository tree for full detail.
 ## Screenshots
 ## Screenshots
 
-### Screenshot 1
-![WEEK PASSWORD](screenshots/Screenshot%202026-08-31%20081316.png)
+### WEEK PASSWORD
+![ WEEK PASSWORD ](screenshots/Screenshot%202026-08-31%20081316.png)
 
-### Screenshot 2
+### STRONG PASSWROD
 ![STRONG PASSWORD](screenshots/Screenshot%202026-08-31%20081357.png)
 
 See `screenshots/` for CLI runs against the WEAK / MEDIUM / STRONG
