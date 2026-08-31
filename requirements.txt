@@ -1,0 +1,7 @@
+# Core runtime has zero hard dependencies beyond the Python standard library.
+# The packages below are used by optional features / development workflow.
+
+pytest>=7.4          # test suite
+colorama>=0.4.6       # optional colored CLI output (cross-platform safe no-op if unused)
+requests>=2.31        # ONLY used by the optional --check-breach HIBP feature
+flask>=3.0            # ONLY needed if you run the optional web/app.py interface

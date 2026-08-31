@@ -1,0 +1,59 @@
+{
+    "_comment": "Configurable security policy for the Password Strength & Security Analyzer. Editing this file changes analyzer behavior without touching Python code.",
+
+    "minimum_length": 8,
+    "recommended_length": 12,
+    "strong_length": 16,
+    "maximum_length": 1000,
+
+    "require_uppercase": true,
+    "require_lowercase": true,
+    "require_digit": true,
+    "require_symbol": true,
+
+    "scoring": {
+        "_comment": "Points awarded/deducted while building the raw score. max_score is the theoretical ceiling used to normalize the final score out of 10.",
+        "length_8": 1,
+        "length_12": 1,
+        "length_16": 1,
+        "has_uppercase": 1,
+        "has_lowercase": 1,
+        "has_digit": 1,
+        "has_symbol": 1,
+        "no_common_password": 2,
+        "no_pattern_detected": 1,
+        "max_score": 10,
+
+        "common_password_penalty": 5,
+        "sequential_pattern_penalty": 2,
+        "repeated_pattern_penalty": 2,
+        "keyboard_pattern_penalty": 2
+    },
+
+    "classification_thresholds": {
+        "_comment": "Minimum normalized score (out of max_score) required for each strength label. A password below minimum_length is always WEAK regardless of score.",
+        "weak_below": 4,
+        "medium_below": 7,
+        "strong_below": 9,
+        "very_strong_requires_no_issues": true
+    },
+
+    "entropy": {
+        "_comment": "Character-set sizes assumed per detected character class, used only for the theoretical entropy estimate.",
+        "lowercase_set_size": 26,
+        "uppercase_set_size": 26,
+        "digit_set_size": 10,
+        "symbol_set_size": 32,
+        "unicode_set_size": 256
+    },
+
+    "crack_time": {
+        "_comment": "Assumed guesses-per-second used ONLY for the theoretical brute-force time estimate. This is a configurable assumption, not a measured attack speed.",
+        "assumed_guesses_per_second": 10000000000
+    },
+
+    "pattern_detection": {
+        "min_sequential_run": 4,
+        "min_repeated_run": 4
+    }
+}
