@@ -115,7 +115,7 @@ scoring logic exists in exactly one place.
 ## Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/saiprasad-belvat/project1-decolabs
 cd password-strength-security-analyzer
 python3 -m venv .venv
 source .venv/bin/activate       # Windows: .venv\Scripts\activate
